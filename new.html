@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GMS Malipur</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Spinner Styles */
+        #spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+        
+        /* Rest of your styles... */
+        .navbar-brand img {
+            height: 60px;
+        }
+        
+        .hero-slider .carousel-item {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .welcome-section, .principal-section, .notice-section {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .welcome-section {
+            background-color: #f0f8ff;
+        }
+        
+        .principal-section {
+            background-color: #fff8f0;
+        }
+        
+        .notice-section {
+            background-color: #f0fff0;
+        }
+        
+        .principal-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .event-card, .news-card, .activity-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .event-card:hover, .news-card:hover, .activity-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .event-card img, .news-card img, .activity-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .newsletter-section {
+            background-color: var(--light-color);
+            padding: 50px 0;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-slider .carousel-item {
+                height: 300px;
+            }
+            
+            .navbar-brand img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner - Improved Version -->
+    <div id="spinner">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/LOGO MALIPUR.jpg" alt="GMS Malipur Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">मुख्य पृष्ठ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">विद्यालय परिचय</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">शिक्षक परिचय</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">सुविधाएं</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">प्रवेश प्रक्रिया</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="6"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="7"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="8"></button>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="9"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,1');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First Slide Label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,2');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second Slide Label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,3');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third Slide Label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,4');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Fourth Slide Label</h5>
+                    <p>Some representative placeholder content for the fourth slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,5');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Fifth Slide Label</h5>
+                    <p>Some representative placeholder content for the fifth slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,6');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Sixth Slide Label</h5>
+                    <p>Some representative placeholder content for the sixth slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,7');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Seventh Slide Label</h5>
+                    <p>Some representative placeholder content for the seventh slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,8');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Eighth Slide Label</h5>
+                    <p>Some representative placeholder content for the eighth slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,9');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ninth Slide Label</h5>
+                    <p>Some representative placeholder content for the ninth slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random/1200x500/?school,10');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Tenth Slide Label</h5>
+                    <p>Some representative placeholder content for the tenth slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Welcome, Principal, Notice Sections -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="welcome-section">
+                        <h3 class="section-title">Welcome to GMS Malipur</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <a href="#" class="btn btn-primary mt-3">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="principal-section text-center">
+                        <h3 class="section-title">Principal's Message</h3>
+                        <img src="https://source.unsplash.com/random/300x300/?principal" alt="Principal" class="principal-img mb-3">
+                        <h5>Dr. John Doe</h5>
+                        <p class="text-muted">Principal, GMS Malipur</p>
+                        <p>"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela</p>
+                        <a href="#" class="btn btn-outline-primary mt-2">Read Full Message</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="notice-section">
+                        <h3 class="section-title">Notice Board</h3>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Annual Sports Day</h6>
+                                    <small>3 days ago</small>
+                                </div>
+                                <p class="mb-1">Annual Sports Day will be held on 25th December 2023.</p>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Parent-Teacher Meeting</h6>
+                                    <small>1 week ago</small>
+                                </div>
+                                <p class="mb-1">PTM scheduled for 15th December 2023.</p>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Holiday Announcement</h6>
+                                    <small>2 weeks ago</small>
+                                </div>
+                                <p class="mb-1">School will remain closed on 12th December 2023.</p>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Exam Schedule</h6>
+                                    <small>3 weeks ago</small>
+                                </div>
+                                <p class="mb-1">Winter term exams starting from 1st January 2024.</p>
+                            </a>
+                        </div>
+                        <a href="#" class="btn btn-outline-success mt-3 d-block">View All Notices</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Upcoming Events</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card event-card">
+                        <img src="https://source.unsplash.com/random/600x400/?school,event,1" class="card-img-top" alt="Event 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Annual Day Celebration</h5>
+                            <p class="card-text"><i class="far fa-calendar-alt me-2"></i> December 20, 2023</p>
+                            <p class="card-text">Join us for our annual day celebration with cultural performances and prize distribution.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card event-card">
+                        <img src="https://source.unsplash.com/random/600x400/?school,event,2" class="card-img-top" alt="Event 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Science Exhibition</h5>
+                            <p class="card-text"><i class="far fa-calendar-alt me-2"></i> January 15, 2024</p>
+                            <p class="card-text">Students will showcase their innovative science projects and experiments.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card event-card">
+                        <img src="https://source.unsplash.com/random/600x400/?school,event,3" class="card-img-top" alt="Event 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Sports Tournament</h5>
+                            <p class="card-text"><i class="far fa-calendar-alt me-2"></i> February 5-10, 2024</p>
+                            <p class="card-text">Inter-school sports competition featuring cricket, football, and athletics.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Activities Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Major Activities</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card activity-card">
+                        <img src="https://source.unsplash.com/random/600x400/?school,activity,1" class="card-img-top" alt="Activity 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Art & Craft</h5>
+                            <p class="card-text">Weekly art and craft sessions to nurture creativity in students.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card activity-card">
+                        <img src="https://source.unsplash.com/random/600x400/?school,activity,2" class="card-img-top" alt="Activity 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Music Classes</h5>
+                            <p class="card-text">Professional music training for vocal and instrumental music.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card activity-card">
+                        <img src="https://source.unsplash.com/random/600x400/?school,activity,3" class="card-img-top" alt="Activity 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Science Club</h5>
+                            <p class="card-text">Hands-on experiments and projects to develop scientific temper.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card activity-card">
+                        <img src="https://source.unsplash.com/random/600x400/?school,activity,4" class="card-img-top" alt="Activity 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Yoga Sessions</h5>
+                            <p class="card-text">Daily yoga practice for physical and mental well-being of students.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Stay updated with the latest news and announcements from GMS Malipur.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="row g-3">
+                        <div class="col-8">
+                            <input type="email" class="form-control form-control-lg" placeholder="Your Email Address">
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About GMS Malipur</h5>
+                    <p>GMS Malipur is a premier educational institution committed to providing quality education and holistic development of students.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Academics</a></li>
+                        <li><a href="#" class="text-white">Admissions</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Malipur, District, State, India</li>
+                        <li><i class="fas fa-phone-alt me-2"></i> +91 1234567890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@gmsmalipur.edu</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Sat: 8:00 AM - 3:00 PM</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>School Map</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.366676115628!2d77.2093143150824!3d28.62864498242206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5e2b7a5a3f%3A0x6a8f5a5b5b5b5b5b!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1629780000000!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 GMS Malipur. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <a href="#" class="text-white">Your Name</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-primary btn-lg rounded-circle back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Improved Loading Script -->
+    <script>
+        // Hide spinner when page is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide spinner after a short delay to ensure everything is loaded
+            setTimeout(function() {
+                document.getElementById('spinner').style.display = 'none';
+            }, 500);
+        });
+
+        // Fallback in case DOMContentLoaded doesn't fire
+        window.addEventListener('load', function() {
+            document.getElementById('spinner').style.display = 'none';
+        });
+
+        // Error handling
+        window.addEventListener('error', function() {
+            document.getElementById('spinner').style.display = 'none';
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
