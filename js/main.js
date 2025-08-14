@@ -217,3 +217,248 @@
         `;
         img.parentNode.insertBefore(errorDiv, img.nextSibling);
     }
+
+
+
+
+
+    /* main page js */
+
+     // Unique JavaScript for the school page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample data for notices
+            const notices = [
+                {
+                    id: 1,
+                    title: "Annual Sports Day",
+                    content: "The Annual Sports Day will be held on November 25th. All students are required to participate. Please contact your class teacher for more details.",
+                    date: "2023-11-25"
+                },
+                {
+                    id: 2,
+                    title: "Parent-Teacher Meeting",
+                    content: "The quarterly parent-teacher meeting is scheduled for December 5th from 9:00 AM to 1:00 PM. All parents are requested to attend.",
+                    date: "2023-12-05"
+                },
+                {
+                    id: 3,
+                    title: "Science Exhibition",
+                    content: "The school science exhibition will be held on November 15th. Students from classes 6-12 should submit their project proposals by November 1st.",
+                    date: "2023-11-15"
+                },
+                {
+                    id: 4,
+                    title: "Holiday Announcement",
+                    content: "The school will remain closed from December 23rd to January 2nd for winter break. Classes will resume on January 3rd.",
+                    date: "2023-12-23"
+                },
+                {
+                    id: 5,
+                    title: "Book Fair",
+                    content: "A book fair will be organized in the school auditorium from November 10th-12th. Students are encouraged to visit during their library periods.",
+                    date: "2023-11-10"
+                }
+            ];
+
+            // Sample data for events
+            const events = [
+                {
+                    id: 1,
+                    title: "Annual Day Celebration",
+                    description: "Our grand annual day function with cultural performances and prize distribution.",
+                    date: "2023-12-15",
+                    image: "https://source.unsplash.com/random/600x400/?school,event"
+                },
+                {
+                    id: 2,
+                    title: "Science Olympiad",
+                    description: "Inter-school science competition for students of classes 9-12.",
+                    date: "2023-11-20",
+                    image: "https://source.unsplash.com/random/600x400/?science,lab"
+                },
+                {
+                    id: 3,
+                    title: "Career Counseling Session",
+                    description: "Expert guidance for students of class 12 about various career options.",
+                    date: "2023-12-05",
+                    image: "https://source.unsplash.com/random/600x400/?career,counseling"
+                }
+            ];
+
+            // Sample data for activities
+            const activities = [
+                {
+                    id: 1,
+                    title: "Eco Club Tree Plantation",
+                    description: "Eco club students planted 100 saplings in the school premises as part of the green initiative.",
+                    date: "2023-10-10",
+                    image: "https://source.unsplash.com/random/600x400/?tree,planting"
+                },
+                {
+                    id: 2,
+                    title: "Inter-house Debate Competition",
+                    description: "Annual inter-house debate competition was held with the topic 'Technology in Education'.",
+                    date: "2023-09-25",
+                    image: "https://source.unsplash.com/random/600x400/?debate,school"
+                },
+                {
+                    id: 3,
+                    title: "Community Service Camp",
+                    description: "Students visited nearby villages to teach underprivileged children as part of social service.",
+                    date: "2023-10-05",
+                    image: "https://source.unsplash.com/random/600x400/?community,service"
+                },
+                {
+                    id: 4,
+                    title: "Robotics Workshop",
+                    description: "Two-day workshop on robotics and AI for students interested in technology.",
+                    date: "2023-11-08",
+                    image: "https://source.unsplash.com/random/600x400/?robotics,workshop"
+                }
+            ];
+
+            // DOM elements
+            const noticeList = document.getElementById('noticeList');
+            const eventsGrid = document.getElementById('eventsGrid');
+            const activitiesGrid = document.getElementById('activitiesGrid');
+            const noticeModal = document.getElementById('noticeModal');
+            const addNoticeModal = document.getElementById('addNoticeModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDate = document.getElementById('modalDate');
+            const modalBody = document.getElementById('modalBody');
+            const closeModal = document.getElementById('closeModal');
+            const closeAddModal = document.getElementById('closeAddModal');
+            const addNoticeBtn = document.getElementById('addNoticeBtn');
+            const noticeForm = document.getElementById('noticeForm');
+
+            // Format date
+            function formatDate(dateString) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return new Date(dateString).toLocaleDateString('en-US', options);
+            }
+
+            // Render notices
+            function renderNotices() {
+                noticeList.innerHTML = '';
+                notices.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(notice => {
+                    const noticeItem = document.createElement('li');
+                    noticeItem.className = 'notice-item';
+                    noticeItem.innerHTML = `
+                        <div class="notice-date">${formatDate(notice.date)}</div>
+                        <div class="notice-title">${notice.title}</div>
+                        <div class="notice-content">${notice.content.substring(0, 100)}...</div>
+                    `;
+                    noticeItem.addEventListener('click', () => openNoticeModal(notice));
+                    noticeList.appendChild(noticeItem);
+                });
+            }
+
+            // Render events
+            function renderEvents() {
+                eventsGrid.innerHTML = '';
+                events.sort((a, b) => new Date(a.date) - new Date(b.date)).forEach(event => {
+                    const eventCard = document.createElement('div');
+                    eventCard.className = 'event-card';
+                    eventCard.innerHTML = `
+                        <img src="${event.image}" alt="${event.title}" class="event-image">
+                        <div class="event-details">
+                            <div class="event-date">${formatDate(event.date)}</div>
+                            <h3 class="event-title">${event.title}</h3>
+                            <p class="event-desc">${event.description}</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    `;
+                    eventsGrid.appendChild(eventCard);
+                });
+            }
+
+            // Render activities
+            function renderActivities() {
+                activitiesGrid.innerHTML = '';
+                activities.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(activity => {
+                    const activityCard = document.createElement('div');
+                    activityCard.className = 'activity-card';
+                    activityCard.innerHTML = `
+                        <img src="${activity.image}" alt="${activity.title}" class="activity-image">
+                        <div class="activity-details">
+                            <div class="activity-date">${formatDate(activity.date)}</div>
+                            <h3 class="activity-title">${activity.title}</h3>
+                            <p class="activity-desc">${activity.description}</p>
+                            <a href="#" class="read-more">View Details</a>
+                        </div>
+                    `;
+                    activitiesGrid.appendChild(activityCard);
+                });
+            }
+
+            // Open notice modal
+            function openNoticeModal(notice) {
+                modalTitle.textContent = notice.title;
+                modalDate.textContent = formatDate(notice.date);
+                modalBody.textContent = notice.content;
+                noticeModal.classList.add('active');
+            }
+
+            // Close modals
+            function closeModals() {
+                noticeModal.classList.remove('active');
+                addNoticeModal.classList.remove('active');
+            }
+
+            // Event listeners
+            closeModal.addEventListener('click', closeModals);
+            closeAddModal.addEventListener('click', closeModals);
+            noticeModal.addEventListener('click', (e) => {
+                if (e.target === noticeModal) closeModals();
+            });
+            addNoticeModal.addEventListener('click', (e) => {
+                if (e.target === addNoticeModal) closeModals();
+            });
+
+            // Add notice button
+            addNoticeBtn.addEventListener('click', () => {
+                addNoticeModal.classList.add('active');
+                document.getElementById('noticeDate').valueAsDate = new Date();
+            });
+
+            // Notice form submission
+            noticeForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const newNotice = {
+                    id: notices.length + 1,
+                    title: document.getElementById('noticeTitle').value,
+                    content: document.getElementById('noticeContent').value,
+                    date: document.getElementById('noticeDate').value
+                };
+                
+                notices.unshift(newNotice);
+                renderNotices();
+                noticeForm.reset();
+                closeModals();
+                
+                // Show success message
+                alert('Notice added successfully!');
+            });
+
+            // Initialize the page
+            renderNotices();
+            renderEvents();
+            renderActivities();
+
+            // Add animation to sections as they come into view
+            const sections = document.querySelectorAll('.section, .events-section, .activities-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });

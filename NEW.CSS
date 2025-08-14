@@ -1,0 +1,738 @@
+/* Importing custom fonts */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Base styles for body */
+body {
+  font-family: "Quicksand", serif; /* Primary font */
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Universal reset for margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Shared button styles */
+.ks-btn {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  display: inline-block;
+  padding: 10px;
+  background: #fea301;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: opacity 0.3s ease;
+  border: none;
+  font-family: Quicksand;
+}
+
+/* Button hover effect */
+.ks-btn:hover {
+  opacity: 0.8;
+}
+
+/* Footer menu and social icon styles */
+.ks-footer-menu,
+.ks-social-icons {
+  list-style: none;
+}
+
+/* Section styling with max-width and centered alignment */
+.ks-header,
+.ks-curriculum,
+.ks-stories,
+.ks-our-stories,
+.ks-footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 100px;
+  padding-bottom: 60px;
+}
+
+/* Hamburger menu for mobile */
+.ks-hamburger-menu {
+  display: none;
+  border: none;
+  background: transparent;
+}
+
+/* Date styling */
+.ks-date {
+  display: inline-block;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 3rem;
+  font-family: Raleway;
+  position: relative;
+  top: -25px;
+}
+
+/* Navbar styling */
+.ks-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #9a9a9a12;
+}
+
+/* Logo and menu container */
+.ks-logo,
+.ks-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ks-logo img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Logo styling */
+.ks-logo h3 {
+  color: #111;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.88rem;
+  margin-left: 8px;
+}
+
+/* Menu items with color styling */
+.ks-menu {
+  gap: 2.5rem;
+  list-style: none;
+  margin-left: 422px;
+}
+
+.ks-menu li a {
+  font-size: 18px;
+  font-weight: 570;
+  line-height: 1.5rem;
+  text-decoration: none;
+}
+.ks-home {
+  color: #fea301;
+}
+
+.ks-about {
+  color: #01acfd;
+}
+
+.ks-facilities {
+  color: #05d4df;
+}
+
+.ks-admission {
+  color: #5d58ef;
+}
+
+/* Contact button */
+.ks-contact-btn {
+  width: 8rem;
+}
+
+/* Hero section */
+.ks-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+/* Hero content styling */
+.ks-hero-content {
+  max-width: 640px;
+}
+
+.ks-hero-content h1 {
+  color: #fea301;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 65px;
+  margin-bottom: 2.5rem;
+}
+
+.ks-hero-content .ks-black {
+  color: #111;
+}
+
+.ks-hero-content .ks-sky-blue {
+  color: #01acfd;
+}
+
+.ks-hero-content p {
+  color: #111;
+  font-size: 17px;
+  margin-bottom: 2.5rem;
+}
+
+/* Hero image styling */
+.ks-hero-img {
+  max-width: 468.6px;
+}
+
+.ks-hero-img img {
+  width: 100%;
+}
+
+/* Enrollment and view-all buttons */
+.ks-enroll-btn,
+.ks-view-all-btn {
+  font-weight: 700;
+  background: #111;
+  width: 14rem;
+  text-align: center;
+  align-content: center;
+}
+
+/* Curriculum section */
+.ks-curriculum {
+  background: url("../assets/bg.png");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 40px;
+}
+
+.ks-curriculum h2 {
+  color: #000;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 55.5px;
+  margin-bottom: 55px;
+}
+
+/* Card container and individual card styling */
+.ks-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.ks-cards-container .ks-card {
+  display: flex;
+  max-width: 367.805px;
+  max-height: 476.784px;
+  padding: 52.819px 40.668px 53.762px 40.878px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32.069px;
+  border-radius: 18.864px;
+}
+
+.ks-cards-container .ks-card h4 {
+  color: #202020;
+  font-size: 24.523px;
+  font-weight: 700;
+  line-height: 30.654px;
+}
+
+.ks-cards-container .ks-card p {
+  color: #808080;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 15.091px;
+  font-weight: 500;
+  line-height: 28.296px;
+}
+
+/* Read more button inside cards */
+.ks-card .ks-read-more-btn {
+  text-align: center;
+  font-family: "Raleway", serif;
+  font-size: 15.091px;
+  font-weight: 700;
+  line-height: 28.296px;
+  border: none;
+  background-color: transparent;
+}
+
+/* Card styles with different color themes */
+.ks-card-1 {
+  border: 0.943px solid #def5ff;
+  background: linear-gradient(180deg, #def5ff 0%, rgba(255, 255, 255, 0) 40%),
+    #fff;
+  box-shadow: 0px 0px 28.296px 0.943px rgba(0, 0, 0, 0.05) inset;
+}
+
+.ks-card-1 .ks-read-more-btn {
+  color: #64c8ff;
+}
+
+.ks-card-2 {
+  border: 0.943px solid #fff4dc;
+  background: linear-gradient(180deg, #fff4dc 0%, rgba(255, 255, 255, 0) 40%),
+    #fff;
+  box-shadow: 0px 0px 28.296px 0.943px rgba(0, 0, 0, 0.05) inset;
+}
+
+.ks-card-2 .ks-read-more-btn {
+  color: #f0aa00;
+}
+
+.ks-card-3 {
+  border-radius: 18.864px;
+  border: 0.943px solid #f2e8ff;
+  background: linear-gradient(180deg, #eee1ff 0%, rgba(255, 255, 255, 0) 40%),
+    #fff;
+  box-shadow: 0px 0px 28.296px 0.943px rgba(0, 0, 0, 0.05) inset;
+}
+
+.ks-card-3 .ks-read-more-btn {
+  color: #8700ff;
+}
+
+/* Arrow button container */
+.ks-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 75rem;
+  margin-top: -320px;
+  margin-bottom: 200px;
+}
+
+.ks-arrow-btn {
+  color: #fea301;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+/* Our stories section */
+.ks-our-stories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/bg.png"),
+  linear-gradient(0deg, rgba(254, 163, 1, 0.12), rgba(255, 255, 255, 0.09));
+  background-position: top;
+  background-size: contain;
+}
+
+.ks-our-stories h2 {
+  color: #000;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 45px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Story card container */
+.ks-story-cards-container {
+  display: grid;
+  grid-template-columns: 540px 1fr 1fr;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.ks-story-big {
+  grid-row: span 2;
+}
+
+.ks-story-card-img img {
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* Story card and text styling */
+.ks-story-card {
+  background: #fff;
+  border-radius: 16px;
+}
+
+.ks-card-text {
+  padding: 0 25px 25px 25px;
+}
+
+.ks-card-text h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 38.347px;
+  max-width: 402px;
+  margin-bottom: 3.2rem;
+}
+
+.ks-first-card-description {
+  color: #666;
+  font-family: Raleway;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 28.761px;
+}
+
+/* Button styles within story cards */
+.ks-btn-1 {
+  background: #3cd8e8;
+  padding: 15px 20px;
+  margin-bottom: 1rem;
+}
+
+.ks-btn-2,
+.ks-btn-3,
+.ks-btn-5 {
+  padding: 10px 20px;
+  margin-bottom: 0.5rem;
+}
+
+.ks-btn-2 {
+  background: #95b226;
+}
+
+.ks-btn-3 {
+  background: #5d58f0;
+}
+
+.ks-btn-5 {
+  font-size: 1rem;
+}
+
+.ks-simillar-text {
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-weight: 700;
+}
+
+.ks-center-btn {
+  text-align: center;
+}
+
+/* Footer styles */
+.ks-footer {
+  background: #0294d9;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+}
+
+.ks-footer-container {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+/* Footer left section */
+.ks-footer-logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 35px;
+}
+
+.ks-footer-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ks-footer-logo h2 {
+  font-family: Quicksand;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 39.509px;
+}
+
+.ks-footer-row {
+  flex: 1;
+}
+
+.ks-footer-menu li{
+  font-size: 12px;
+}
+
+.ks-kids-education p {
+  font-size: 17px;
+}
+
+/* Footer right section */
+.ks-footer-menu li a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ks-keep-touch,
+.ks-about-school {
+  display: flex;
+  justify-content: center;
+}
+
+.ks-about-school h4,
+.ks-keep-touch h4 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.ks-social-icons {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.ks-social-icons img {
+  width: 40.613px;
+}
+
+.ks-subscribe-btn {
+  background: #fea301;
+  padding: 14px 20px;
+  border-radius: 40px;
+}
+
+.ks-footer-copy {
+  text-align: center;
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  margin-top: 40px;
+}
+
+/* Responsive mobile devices */
+
+@media (max-width: 767px) {
+  .ks-header,
+  .ks-curriculum,
+  .ks-our-stories {
+    padding: 0;
+  }
+
+  .ks-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 0.2px solid #FEA301;
+  }
+
+  .ks-menu,
+  .ks-contact-btn,
+  .ks-story-big {
+    display: none;
+  }
+
+  .ks-logo h3{
+    font-size: 26px;
+  }
+
+  .ks-hamburger-menu {
+    display: block;
+    font-size: 30px;
+  }
+
+  .ks-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .ks-menu.active {
+    display: flex;
+  }
+  
+  .ks-menu li a {
+    color: #fea301;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .ks-hero {
+    flex-direction: column-reverse;
+    row-gap: 20px;
+    padding: 8px 16px;
+    padding-bottom: 60px;
+  }
+
+  .ks-hero-content {
+    text-align: center;
+    padding-left: 20px;
+  }
+
+  .ks-our-stories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/bg.png"),
+      linear-gradient(0deg, rgba(254, 163, 1, 0.3), rgba(255, 255, 255, 0.3));
+    background-position: top;
+    background-size: contain;
+  }
+
+  .ks-hero-content h1 {
+    font-size: 32px;
+    line-height: normal;
+    margin-bottom: 18px;
+  }
+
+  .ks-hero-content p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 18px;
+  }
+
+  .ks-hero .ks-hero-img {
+    padding: 20px 10px 0 10px;
+  }
+
+  .ks-enroll-btn,
+  .ks-view-all-btn {
+    width: auto;
+    padding: 6px 24px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  /* curriculum section for mobile */
+
+  .ks-curriculum h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+  .ks-cards-container {
+    padding-bottom: 40px;
+    margin-bottom: 0;
+  }
+
+  .ks-btn-container {
+    display: none;
+  }
+
+  .ks-footer-container {
+    flex-direction: column;
+  }
+  .ks-keep-touch,
+  .ks-about-school {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .ks-center-btn {
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  .ks-date,
+  .ks-btn-2 {
+    font-size: 9px;
+    padding: 6px 12px;
+    position: static;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .ks-card-text {
+    padding: 0 22px 0 22px;
+    position: relative;
+    top: -20px;
+  }
+
+  .ks-story-cards-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .ks-simillar-text {
+    font-size: 9.133px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17.125px;
+  }
+
+  .ks-footer {
+    padding: 4rem 1rem;
+  }
+
+  .ks-footer-logo {
+    margin-bottom: 1.5rem;
+  }
+
+  .ks-kids-education p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  .ks-about-school {
+    margin-bottom: 31px;
+  }
+
+  .ks-about-school h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .ks-keep-touch h4 {
+    font-size: 22.043px;
+    font-weight: 700;
+    line-height: 22.043px;
+  }
+
+  .ks-footer-menu li {
+    margin-bottom: 17px;
+  }
+
+  .ks-footer-menu li a {
+    font-size: 16.957px;
+    font-weight: 500;
+  }
+
+  /* our stories section */
+  .ks-our-stories h2 {
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 26px;
+  }
+  .ks-story-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 11px;
+    margin-bottom: 20px;
+  }
+
+  .ks-footer-logo h2 {
+    font-size: 35px;
+  }
+}
