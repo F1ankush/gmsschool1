@@ -106,98 +106,114 @@
 
 /*  slider js */
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const carouselInner = document.querySelector('.carousel-inner');
-    const items = document.querySelectorAll('.carousel-item');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    const indicatorsContainer = document.querySelector('.indicators');
-    
-    let currentIndex = 0;
-    const totalItems = items.length;
-    
-    // Create indicators
-    items.forEach((_, index) => {
-        const indicator = document.createElement('div');
-        indicator.classList.add('indicator');
-        if (index === 0) indicator.classList.add('active');
-        indicator.addEventListener('click', () => goToSlide(index));
-        indicatorsContainer.appendChild(indicator);
-    });
-    
-    const indicators = document.querySelectorAll('.indicator');
-    
-    // Update carousel position
-    function updateCarousel() {
-        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+// Unique namespace for JavaScript to prevent conflicts
+    document.addEventListener('DOMContentLoaded', function() {
+        const gmsCarouselInner = document.querySelector('.gms-carousel-inner');
+        const gmsItems = document.querySelectorAll('.gms-carousel-item');
+        const gmsPrevBtn = document.querySelector('.gms-carousel-prev');
+        const gmsNextBtn = document.querySelector('.gms-carousel-next');
+        const gmsIndicatorsContainer = document.querySelector('.gms-carousel-indicators');
         
-        // Update active indicator
-        indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentIndex);
+        let gmsCurrentIndex = 0;
+        const gmsTotalItems = gmsItems.length;
+        
+        // Create indicators
+        gmsItems.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('gms-carousel-indicator');
+            if (index === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => gmsGoToSlide(index));
+            gmsIndicatorsContainer.appendChild(indicator);
         });
-    }
-    
-    // Go to specific slide
-    function goToSlide(index) {
-        currentIndex = index;
-        if (currentIndex >= totalItems) currentIndex = 0;
-        if (currentIndex < 0) currentIndex = totalItems - 1;
-        updateCarousel();
-    }
-    
-    // Next slide
-    function nextSlide() {
-        currentIndex++;
-        if (currentIndex >= totalItems) currentIndex = 0;
-        updateCarousel();
-    }
-    
-    // Previous slide
-    function prevSlide() {
-        currentIndex--;
-        if (currentIndex < 0) currentIndex = totalItems - 1;
-        updateCarousel();
-    }
-    
-    // Event listeners
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-    
-    // Auto-advance (optional)
-    let autoSlide = setInterval(nextSlide, 5000);
-    
-    // Pause on hover
-    carouselInner.addEventListener('mouseenter', () => {
-        clearInterval(autoSlide);
+        
+        const gmsIndicators = document.querySelectorAll('.gms-carousel-indicator');
+        
+        // Update carousel position
+        function gmsUpdateCarousel() {
+            gmsCarouselInner.style.transform = `translateX(-${gmsCurrentIndex * 100}%)`;
+            
+            // Update active indicator
+            gmsIndicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === gmsCurrentIndex);
+            });
+        }
+        
+        // Go to specific slide
+        function gmsGoToSlide(index) {
+            gmsCurrentIndex = index;
+            if (gmsCurrentIndex >= gmsTotalItems) gmsCurrentIndex = 0;
+            if (gmsCurrentIndex < 0) gmsCurrentIndex = gmsTotalItems - 1;
+            gmsUpdateCarousel();
+        }
+        
+        // Next slide
+        function gmsNextSlide() {
+            gmsCurrentIndex++;
+            if (gmsCurrentIndex >= gmsTotalItems) gmsCurrentIndex = 0;
+            gmsUpdateCarousel();
+        }
+        
+        // Previous slide
+        function gmsPrevSlide() {
+            gmsCurrentIndex--;
+            if (gmsCurrentIndex < 0) gmsCurrentIndex = gmsTotalItems - 1;
+            gmsUpdateCarousel();
+        }
+        
+        // Event listeners
+        gmsNextBtn.addEventListener('click', gmsNextSlide);
+        gmsPrevBtn.addEventListener('click', gmsPrevSlide);
+        
+        // Auto-advance
+        let gmsAutoSlide = setInterval(gmsNextSlide, 5000);
+        
+        // Pause on hover
+        gmsCarouselInner.addEventListener('mouseenter', () => {
+            clearInterval(gmsAutoSlide);
+        });
+        
+        gmsCarouselInner.addEventListener('mouseleave', () => {
+            gmsAutoSlide = setInterval(gmsNextSlide, 5000);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') gmsNextSlide();
+            if (e.key === 'ArrowLeft') gmsPrevSlide();
+        });
+        
+        // Touch events for mobile
+        let gmsTouchStartX = 0;
+        let gmsTouchEndX = 0;
+        
+        gmsCarouselInner.addEventListener('touchstart', (e) => {
+            gmsTouchStartX = e.changedTouches[0].screenX;
+        });
+        
+        gmsCarouselInner.addEventListener('touchend', (e) => {
+            gmsTouchEndX = e.changedTouches[0].screenX;
+            gmsHandleSwipe();
+        });
+        
+        function gmsHandleSwipe() {
+            if (gmsTouchEndX < gmsTouchStartX - 50) gmsNextSlide(); // Swipe left
+            if (gmsTouchEndX > gmsTouchStartX + 50) gmsPrevSlide(); // Swipe right
+        }
     });
-    
-    carouselInner.addEventListener('mouseleave', () => {
-        autoSlide = setInterval(nextSlide, 5000);
-    });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') nextSlide();
-        if (e.key === 'ArrowLeft') prevSlide();
-    });
-    
-    // Touch events for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carouselInner.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-    
-    carouselInner.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
-        if (touchEndX < touchStartX - 50) nextSlide(); // Swipe left
-        if (touchEndX > touchStartX + 50) prevSlide(); // Swipe right
+
+    // Unique image error handler
+    function handleGmsImageError(img) {
+        img.classList.add('error-state');
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'gms-img-error';
+        errorDiv.innerHTML = `
+            <div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2">
+                    <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <p>Image not available</p>
+                <small>${img.alt || 'Image'}</small>
+            </div>
+        `;
+        img.parentNode.insertBefore(errorDiv, img.nextSibling);
     }
-});
