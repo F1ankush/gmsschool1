@@ -965,8 +965,8 @@
         }
         
         .footer-logo {
-            width: 135px;
-            height: 20;
+            width: 255px;
+            height: auto;
             margin-bottom: 15px;
         }
         
