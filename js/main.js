@@ -102,3 +102,102 @@
 
 })(jQuery);
 
+
+
+/*  slider js */
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselInner = document.querySelector('.carousel-inner');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const indicatorsContainer = document.querySelector('.indicators');
+    
+    let currentIndex = 0;
+    const totalItems = items.length;
+    
+    // Create indicators
+    items.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
+    
+    const indicators = document.querySelectorAll('.indicator');
+    
+    // Update carousel position
+    function updateCarousel() {
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update active indicator
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        if (currentIndex >= totalItems) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = totalItems - 1;
+        updateCarousel();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentIndex++;
+        if (currentIndex >= totalItems) currentIndex = 0;
+        updateCarousel();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = totalItems - 1;
+        updateCarousel();
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Auto-advance (optional)
+    let autoSlide = setInterval(nextSlide, 5000);
+    
+    // Pause on hover
+    carouselInner.addEventListener('mouseenter', () => {
+        clearInterval(autoSlide);
+    });
+    
+    carouselInner.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(nextSlide, 5000);
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+    });
+    
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carouselInner.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    carouselInner.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) nextSlide(); // Swipe left
+        if (touchEndX > touchStartX + 50) prevSlide(); // Swipe right
+    }
+});
