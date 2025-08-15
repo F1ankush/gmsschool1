@@ -296,17 +296,17 @@
                 },
                 {
                     id: 2,
-                    title: "Inter-house Debate Competition",
-                    description: "Annual inter-house debate competition was held with the topic 'Technology in Education'.",
+                    title: "कला एवं चित्रांकन ",
+                    description: "विद्यालय में कला एवं चित्रांकन गतिविधि आयोजित हुई, जिसमें छात्रों ने अपनी रचनात्मकता और कल्पनाशक्ति का सुंदर प्रदर्शन किया। ",
                     date: "2023-09-25",
-                    image: "https://source.unsplash.com/random/600x400/?debate,school"
+                    image: "assets/slider20.png"
                 },
                 {
                     id: 3,
-                    title: "Community Service Camp",
-                    description: "Students visited nearby villages to teach underprivileged children as part of social service.",
+                    title: "तरंग",
+                    description: " विद्यालय में ‘तरंग’ कार्यक्रम का आयोजन हुआ, जिसमें छात्रों ने सांस्कृतिक, शैक्षणिक और रचनात्मक प्रतिभाओं का उत्कृष्ट प्रदर्शन किया।",
                     date: "2023-10-05",
-                    image: "https://source.unsplash.com/random/600x400/?community,service"
+                    image: " assets/slider35.png"
                 },
                 {
                     id: 4,
