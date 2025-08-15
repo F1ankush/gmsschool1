@@ -230,58 +230,41 @@
             const notices = [
                 {
                     id: 1,
-                    title: "Annual Sports Day",
-                    content: "The Annual Sports Day will be held on November 25th. All students are required to participate. Please contact your class teacher for more details.",
-                    date: "2023-11-25"
+                    title: "स्वतंत्रता दिवस ",
+                    content: "विद्यालय परिवार के सभी सदस्यों को सूचित किया जाता है कि 79वाँ स्वतंत्रता दिवस के शुभ अवसर पर GMS MALIPUR के प्रांगण में स्वतंत्रता दिवस समारोह पूर्वक मनाया जाएगा। ",
+                    date: "2025-08-15"
                 },
                 {
                     id: 2,
-                    title: "Parent-Teacher Meeting",
-                    content: "The quarterly parent-teacher meeting is scheduled for December 5th from 9:00 AM to 1:00 PM. All parents are requested to attend.",
-                    date: "2023-12-05"
+                    title: "कृष्ण जन्माष्टमी ",
+                    content: "विद्यालय परिवार के सभी सदस्यों को सूचित किया जाता है कि दिनांक 16 अगस्त 2025 को कृष्ण जन्माष्टमी के शुभ अवसर पर विद्यालय में पठन-पाठन स्थगित रहेगा। दिनांक 17 अगस्त 2025 को रविवार अवकाश के पश्चात दिनांक 18 अगस्त 2025 से विद्यालय का संचालन पूर्व निर्धारित कार्यक्रम अनुसार होगा।",
+                    date: "2023-08-16"
                 },
-                {
-                    id: 3,
-                    title: "Science Exhibition",
-                    content: "The school science exhibition will be held on November 15th. Students from classes 6-12 should submit their project proposals by November 1st.",
-                    date: "2023-11-15"
-                },
-                {
-                    id: 4,
-                    title: "Holiday Announcement",
-                    content: "The school will remain closed from December 23rd to January 2nd for winter break. Classes will resume on January 3rd.",
-                    date: "2023-12-23"
-                },
-                {
-                    id: 5,
-                    title: "Book Fair",
-                    content: "A book fair will be organized in the school auditorium from November 10th-12th. Students are encouraged to visit during their library periods.",
-                    date: "2023-11-10"
-                }
+               
             ];
 
             // Sample data for events
             const events = [
                 {
                     id: 1,
-                    title: "5 सितम्बर – शिक्षक दिवस",
+                    title: " शिक्षक दिवस",
                     description: " इस दिन विद्यार्थी रंगारंग सांस्कृतिक कार्यक्रम प्रस्तुत करेंगे और अपने प्रिय शिक्षकों को सम्मानित करेंगे। यह अवसर गुरुजनों के प्रति आभार व्यक्त करने और उनके योगदान को याद करने का दिन होगा।",
                     date: "september 5, 2025",
-                    image: "https://source.unsplash.com/random/600x400/?school,event"
+                    image: "assets/teacher.jpg"
                 },
                 {
                     id: 2,
-                    title: "2 अक्टूबर – गांधी जयंती एवं लाल बहादुर शास्त्री जयंती",
+                    title: "गांधी जयंती एवं लाल बहादुर शास्त्री जयंती",
                     description: "2 अक्टूबर – गांधी जयंती एवं लाल बहादुर शास्त्री जयंती स्वच्छता अभियान, निबंध लेखन और भाषण प्रतियोगिता।",
                     date: "octuber 2, 2025",
-                    image: "https://source.unsplash.com/random/600x400/?science,lab"
+                    image: "assets/octuber.jpeg"
                 },
                 {
                     id: 3,
-                    title: "14 नवम्बर – बाल दिवस",
+                    title: " बाल दिवस",
                     description: "इस दिन बच्चों के लिए विशेष खेल-कूद, चित्रकला और कहानी सुनाने की प्रतियोगिताएँ आयोजित की जाएँगी। यह दिन आनंद, रचनात्मकता और बाल सुलभ उमंग को बढ़ावा देने का अवसर होगा।",
                     date: "November 14, 2025",
-                    image: "https://source.unsplash.com/random/600x400/?career,counseling"
+                    image: "assets/child .jpeg"
                 }
             ];
 
@@ -314,6 +297,20 @@
                     description: "विद्यालय परिसर में विज्ञान प्रदर्शनी कार्यक्रम आयोजित हुआ, जिसमें छात्र-छात्राओं ने अपने प्रोजेक्ट प्रदर्शित किए। इस अवसर पर अभिभावकों एवं आगंतुकों ने उत्साहपूर्वक भाग लिया।",
                     date: "2023-11-08",
                     image: "assets/science.jpeg"
+                },
+                {
+                    id: 5,
+                    title: "पर्यावरण जागरूकता",
+                    description: "विद्यालय में पर्यावरण जागरूकता कार्यक्रम आयोजित हुआ, जिसमें छात्रों ने स्वच्छता, वृक्षारोपण और प्रकृति संरक्षण का संदेश दिया।",
+                    date: "2023-06-05",
+                    image: "assets/nature.jpeg"
+                },
+                {
+                    id: 6,
+                    title: "फ़िल्म  प्रदर्शन",
+                    description: "विद्यालय में फ़िल्म प्रदर्शन कार्यक्रम आयोजित हुआ, जिसमें छात्रों ने रुचिकर एवं ज्ञानवर्धक फ़िल्म का आनंद लिया।",
+                    date: "2023-11-08",
+                    image: "assets/slider17.png"
                 }
             ];
 
