@@ -264,23 +264,23 @@
             const events = [
                 {
                     id: 1,
-                    title: "Annual Day Celebration",
-                    description: "Our grand annual day function with cultural performances and prize distribution.",
-                    date: "2023-12-15",
+                    title: "5 सितम्बर – शिक्षक दिवस",
+                    description: " इस दिन विद्यार्थी रंगारंग सांस्कृतिक कार्यक्रम प्रस्तुत करेंगे और अपने प्रिय शिक्षकों को सम्मानित करेंगे। यह अवसर गुरुजनों के प्रति आभार व्यक्त करने और उनके योगदान को याद करने का दिन होगा।",
+                    date: "september 5, 2025",
                     image: "https://source.unsplash.com/random/600x400/?school,event"
                 },
                 {
                     id: 2,
-                    title: "Science Olympiad",
-                    description: "Inter-school science competition for students of classes 9-12.",
-                    date: "2023-11-20",
+                    title: "2 अक्टूबर – गांधी जयंती एवं लाल बहादुर शास्त्री जयंती",
+                    description: "2 अक्टूबर – गांधी जयंती एवं लाल बहादुर शास्त्री जयंती स्वच्छता अभियान, निबंध लेखन और भाषण प्रतियोगिता।",
+                    date: "octuber 2, 2025",
                     image: "https://source.unsplash.com/random/600x400/?science,lab"
                 },
                 {
                     id: 3,
-                    title: "Career Counseling Session",
-                    description: "Expert guidance for students of class 12 about various career options.",
-                    date: "2023-12-05",
+                    title: "14 नवम्बर – बाल दिवस",
+                    description: "इस दिन बच्चों के लिए विशेष खेल-कूद, चित्रकला और कहानी सुनाने की प्रतियोगिताएँ आयोजित की जाएँगी। यह दिन आनंद, रचनात्मकता और बाल सुलभ उमंग को बढ़ावा देने का अवसर होगा।",
+                    date: "November 14, 2025",
                     image: "https://source.unsplash.com/random/600x400/?career,counseling"
                 }
             ];
@@ -289,31 +289,31 @@
             const activities = [
                 {
                     id: 1,
-                    title: "Eco Club Tree Plantation",
-                    description: "Eco club students planted 100 saplings in the school premises as part of the green initiative.",
+                    title: "शारीरिक प्रशिक्षण",
+                    description: "विद्यालय में व्यायाम, योग एवं शारीरिक विकास गतिविधियाँ आयोजित हुईं, जिनमें छात्रों ने उत्साहपूर्वक भाग लिया। इन गतिविधियों से स्वास्थ्य, एकाग्रता और अनुशासन को बढ़ावा मिला।",
                     date: "2023-10-10",
-                    image: "https://source.unsplash.com/random/600x400/?tree,planting"
+                    image: "assets/slider22.png"
                 },
                 {
                     id: 2,
-                    title: "Inter-house Debate Competition",
-                    description: "Annual inter-house debate competition was held with the topic 'Technology in Education'.",
+                    title: "कला एवं चित्रांकन ",
+                    description: "विद्यालय में कला एवं चित्रांकन गतिविधि आयोजित हुई, जिसमें छात्रों ने अपनी रचनात्मकता और कल्पनाशक्ति का सुंदर प्रदर्शन किया। ",
                     date: "2023-09-25",
-                    image: "https://source.unsplash.com/random/600x400/?debate,school"
+                    image: "assets/slider20.png"
                 },
                 {
                     id: 3,
-                    title: "Community Service Camp",
-                    description: "Students visited nearby villages to teach underprivileged children as part of social service.",
+                    title: "तरंग",
+                    description: " विद्यालय में ‘तरंग’ कार्यक्रम का आयोजन हुआ, जिसमें छात्रों ने सांस्कृतिक, शैक्षणिक और रचनात्मक प्रतिभाओं का उत्कृष्ट प्रदर्शन किया।",
                     date: "2023-10-05",
-                    image: "https://source.unsplash.com/random/600x400/?community,service"
+                    image: " assets/slider35.png"
                 },
                 {
                     id: 4,
-                    title: "Robotics Workshop",
-                    description: "Two-day workshop on robotics and AI for students interested in technology.",
+                    title: "विज्ञान प्रदर्शनी",
+                    description: "विद्यालय परिसर में विज्ञान प्रदर्शनी कार्यक्रम आयोजित हुआ, जिसमें छात्र-छात्राओं ने अपने प्रोजेक्ट प्रदर्शित किए। इस अवसर पर अभिभावकों एवं आगंतुकों ने उत्साहपूर्वक भाग लिया।",
                     date: "2023-11-08",
-                    image: "https://source.unsplash.com/random/600x400/?robotics,workshop"
+                    image: "assets/science.jpeg"
                 }
             ];
 
