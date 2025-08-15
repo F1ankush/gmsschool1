@@ -264,24 +264,24 @@
             const events = [
                 {
                     id: 1,
-                    title: "5 सितम्बर – शिक्षक दिवस",
+                    title: " शिक्षक दिवस",
                     description: " इस दिन विद्यार्थी रंगारंग सांस्कृतिक कार्यक्रम प्रस्तुत करेंगे और अपने प्रिय शिक्षकों को सम्मानित करेंगे। यह अवसर गुरुजनों के प्रति आभार व्यक्त करने और उनके योगदान को याद करने का दिन होगा।",
                     date: "september 5, 2025",
-                    image: "https://source.unsplash.com/random/600x400/?school,event"
+                    image: "assets/teacher.jpg"
                 },
                 {
                     id: 2,
-                    title: "2 अक्टूबर – गांधी जयंती एवं लाल बहादुर शास्त्री जयंती",
+                    title: "गांधी जयंती एवं लाल बहादुर शास्त्री जयंती",
                     description: "2 अक्टूबर – गांधी जयंती एवं लाल बहादुर शास्त्री जयंती स्वच्छता अभियान, निबंध लेखन और भाषण प्रतियोगिता।",
                     date: "octuber 2, 2025",
-                    image: "https://source.unsplash.com/random/600x400/?science,lab"
+                    image: "assets/octuber.jpeg"
                 },
                 {
                     id: 3,
-                    title: "14 नवम्बर – बाल दिवस",
+                    title: " बाल दिवस",
                     description: "इस दिन बच्चों के लिए विशेष खेल-कूद, चित्रकला और कहानी सुनाने की प्रतियोगिताएँ आयोजित की जाएँगी। यह दिन आनंद, रचनात्मकता और बाल सुलभ उमंग को बढ़ावा देने का अवसर होगा।",
                     date: "November 14, 2025",
-                    image: "https://source.unsplash.com/random/600x400/?career,counseling"
+                    image: "assets/child .jpeg"
                 }
             ];
 
