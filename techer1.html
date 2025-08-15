@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>GMS Malipur</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <link href="assets/gmsf1.png" rel="icon">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style1.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+       <!--Topbar Start -->
+       <!-- <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block"></div>
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <div class="border-end border-primary pe-3">
+                            <a href="https://maps.app.goo.gl/N4GsfP2heLfFrjry8" class="text-muted small">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location
+                            </a>
+                        </div>
+                        <div class="ps-3">
+                            <a href="mailto:example@gmail.com" class="text-muted small">
+                                <i class="fas fa-envelope text-primary me-2"></i>example@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex border-end border-primary pe-3">
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+  <!--toolbar -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light"> 
+                    <a href="#" class="navbar-brand p-0">
+                       <!--- <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1>  -->
+                         <img src="img/LOGO MALIPUR.jpg" alt="Logo"> 
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav mx-0 mx-lg-auto">
+                            <a href="index.html" class="nav-item nav-link active">मुख्य पृष्ठ </a>
+                            <a href="about.html" class="nav-item nav-link">विद्यालय  </a>
+                            <a href="service.html" class="nav-item nav-link">शिक्षक  </a>
+                          
+                          <!--<div class="nav-item dropdown">--> 
+                                <a href="enroll.html" class="nav-link"> प्रवेश प्रक्रिया </a> <!-- data-bs-toggle="dropdown"> -->
+                                  <!-- <span class="dropdown-toggle">Pages</span> 
+                                </a> -->
+                               
+                                 <!-- <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Get a Quote</ -->
+                            <!--   <div class="dropdown-menu">
+                                    <a href="feature.html" class="dropdown-item">Our Features</a>
+                                    <a href="team.html" class="dropdown-item">Our team</a>
+                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                    <a href="FAQ.html" class="dropdown-item">FAQs</a>
+                                    <a href="404.html" class="dropdown-item">404 Page</a> -->
+                                </div>
+                                <a href="contact.html" class="nav-item nav-link">Contact</a> 
+
+                            </div>
+                          
+                            <!-- <div class="nav-btn px-3"> -->
+                               <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>-->
+                                <!-- <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Get a Quote</a> -->
+                            </div>
+                        </div>
+                    </div>
+                  <!--  <div class="d-none d-xl-flex flex-shrink-0 ps-4">
+                        <a href="#" class="btn btn-light btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                            <i class="fa fa-phone-alt fa-2x"></i>
+                            <div class="position-absolute" style="top: 7px; right: 12px;">
+                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                            </div>
+                        </a>
+                        <div class="d-flex flex-column ms-3">
+                            <span>Call to Our Experts</span>
+                            <a href="tel:+ 0123 456 7890"><span class="text-dark">Free: + 0123 456 7890</span></a>
+                        </div>
+                    </div> -->
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Modal Search Start -
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center bg-primary">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -- Modal Search End --> 
+ 
+ 
+ 
+ <div class="container-fluid service py-5">
+        <div class="container py-5">
+            <!-- Main Heading -->
+            <h1 class="main-heading">"समर्पित शिक्षक, उत्कृष्ट शिक्षा"</h1>
+            
+            <!-- Teachers Profile Section -->
+            <section id="players">
+                <h2 class="centered-heading">शिक्षकों की प्रोफ़ाइल</h2>
+                
+                <div class="player-grid">
+                    <!-- 1. Principal -->
+                    <div class="player-card">
+                        <img src="teacher/teacher1.jpeg" alt="सुशील रजक" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h4>प्रधानाध्यापक</h4>
+                            <h3>सुशील रजक</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> MA(History)</p>
+                            <p><strong>विषय:</strong> हिंदी</p>
+                            <p><strong>अनुभव:</strong> 25 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher2.jpeg" alt="आशुतोष कुमार बैजु" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>आशुतोष कुमार बैजु</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> MA(History)</p>
+                            <p><strong>पदनाम:</strong> प्रशिक्षित स्नातक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 12 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 3. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher6.jpeg" alt="प्रभात कुमार" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>प्रभात कुमार</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(History)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 12 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 4. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher5.jpeg" alt="अशोक कुमार साहु" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>अशोक कुमार साहु</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BSc(Zoology)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 8 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 5. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher7.jpeg" alt="MD शफ़ीक़ूर रहमान" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>MD शफ़ीक़ूर रहमान</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Urdu)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 20 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 6. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher14.jpeg" alt="पवन कुमार" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>पवन कुमार</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(English)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 18 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 7. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher13.jpeg" alt="सुनैना कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>सुनैना कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Hindi)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 18 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 8. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher10.jpeg" alt="आरती कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>आरती कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(History)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 18 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 9. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher11.jpeg" alt="कमला कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>कमला कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Hindi)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 18 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 10. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher8.jpeg" alt="MD मोगीसुर रहमान" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>MD मोगीसुर रहमान</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Urdu)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 16 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 11. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher4.jpeg" alt="संतोष कुमार" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>संतोष कुमार</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> PGDCA</p>
+                            <p><strong>पदनाम:</strong> TGT(Computer)</p>
+                            <p><strong>अनुभव:</strong> 4 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 12. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher12.jpeg" alt="सरिता कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>सरिता कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Hindi)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 1 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                     <!-- 13. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher12.jpeg" alt="सरिता कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>सरिता कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Hindi)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 1 वर्ष</p>
+                        </div>
+                    </div>
+                    <!-- 14. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher3.jpeg" alt="मनीष वर्मा" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>मनीष वर्मा</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BE(EC)</p>
+                            <p><strong>पदनाम:</strong> TGT(Math & Science)</p>
+                            <p><strong>अनुभव:</strong> 2 वर्ष</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    
+       <!-- Footer Section -->
+    <footer class="school-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <!-- About GMS Malipur with Logo -->
+                <div class="footer-col">
+                    <div class="footer-about">
+                        <img src="img/LOGO MALIPUR.jpg" alt="GMS Malipur Logo" class="footer-logo">
+                        <h4>About GMS Malipur</h4>
+                        <p>GMS Malipur is a premier educational institution committed to providing quality education and holistic development of students since its establishment.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Academics</a></li>
+                            <li><a href="#">Admissions</a></li>
+                            <li><a href="#">Faculty</a></li>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <div class="contact-info">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Malipur, District, State, India - 123456</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 1234567890</p>
+                        <p><i class="fas fa-envelope"></i> info@gmsmalipur.edu</p>
+                        <p><i class="fas fa-clock"></i> Monday - Saturday: 8:00 AM - 3:00 PM</p>
+                    </div>
+                </div>
+                
+                <!-- School Map -->
+                <div class="footer-col">
+                    <h4>Our Location</h4>
+                   <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.366676115628!2d77.2093143150824!3d28.62864498242206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5e2b7a5a3f%3A0x6a8f5a5b5b5b5b5b!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1629780000000!5m2!1sen!2sin" class="footer-map" allowfullscreen="" loading="lazy"></iframe> -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3595.030085372628!2d86.1504088!3d25.7034279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edf96117aa2ead%3A0x6af9976124464a66!2sMiddle%20School%20Malipur!5e0!3m2!1sen!2sin!4v1755175826902!5m2!1sen!2sin" class="footer-map" allowfullscreen="" loading="lazy" ></iframe>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 GMS Malipur. All Rights Reserved. | Designed by <a href="#">Growcell IT Architect</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

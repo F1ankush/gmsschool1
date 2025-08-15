@@ -1,842 +1,338 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शिक्षक प्रोफाइल</title>
+    <style>
+        /* Unique CSS Styles */
+        :root {
+            --primary-color: #2c5e92;
+            --secondary-color: #4f8bc9;
+            --accent-color: #f5a623;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+        }
 
-    <head>
-        <meta charset="utf-8">
-        <title>GMS Malipur</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        .container-fluid.service {
+            padding: 0;
+            text-align: center; /* Center all content */
+        }
 
-        <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
+        /* Centered Heading Styles */
+        .centered-heading {
+            display: inline-block;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 0 auto 2rem auto;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            position: relative;
+            text-align: center;
+        }
 
-        <link href="assets/gmsf1.png" rel="icon">
+        .centered-heading::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: block;
+            text-align: center;
+        }
 
-        <!-- Template Stylesheet -->
-        <link href="css/style1.css" rel="stylesheet">
-    </head>
+        /* Teacher Cards */
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px auto 0;
+            max-width: 1200px;
+        }
 
-    <body>
+        .player-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
+        .player-card img {
+            width: 100%;
+            height: 450px,
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-color);
+        }
 
-        <!-- Topbar Start -
-        <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
-            <div class="container">
-                <div class="row gx-0 align-items-center">
-                    <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                        <div class="d-flex flex-wrap">
-                            <div class="border-end border-primary pe-3">
-                                <a href="https://maps.app.goo.gl/N4GsfP2heLfFrjry8" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                            </div>
-                            <div class="ps-3">
-                                <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center text-lg-end">
-                        <div class="d-flex justify-content-end">
-                            <div class="d-flex border-end border-primary pe-3">
-                                <a class="btn p-0 text-primary me-3" href="https://www.facebook.com/profile.php?id=100092469821465"><i class="fab fa-facebook-f"></i></a>
-                               --- <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
-                                <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a> -->
-                            </div>
-                            <!-- <div class="dropdown ms-3">
-                                <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
-                                <div class="dropdown-menu rounded">
-                                    <a href="#" class="dropdown-item">English</a>
-                                    <a href="#" class="dropdown-item">Bangla</a>
-                                    <a href="#" class="dropdown-item">French</a>
-                                    <a href="#" class="dropdown-item">Spanish</a>
-                                    <a href="#" class="dropdown-item">Arabic</a>
-                                </div>  -
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
-   --toolbar -->
+        .player-card-content {
+            padding: 20px;
+        }
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light"> 
-                    <a href="#" class="navbar-brand p-0">
-                       <!--- <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1>  -->
-                         <img src="img/LOGO MALIPUR.jpg" alt="Logo"> 
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav mx-0 mx-lg-auto">
-                            <a href="index.html" class="nav-item nav-link active">मुख्य पृष्ठ </a>
-                            <a href="about.html" class="nav-item nav-link">विद्यालय  </a>
-                            <a href="service.html" class="nav-item nav-link">शिक्षक  </a>
-                            <a href="blog.html" class="nav-item nav-link">सुविधाएं </a>
-                          <!--<div class="nav-item dropdown">--> 
-                                <a href="enroll.html" class="nav-link"> प्रवेश प्रक्रिया </a> <!-- data-bs-toggle="dropdown"> -->
-                                  <!-- <span class="dropdown-toggle">Pages</span> 
-                                </a> -->
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                                 <!-- <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Get a Quote</ -->
-                            <!--   <div class="dropdown-menu">
-                                    <a href="feature.html" class="dropdown-item">Our Features</a>
-                                    <a href="team.html" class="dropdown-item">Our team</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="FAQ.html" class="dropdown-item">FAQs</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a> -->
-                                </div>
-                            </div>
-                          
-                            <!-- <div class="nav-btn px-3"> -->
-                               <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>-->
-                                <!-- <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Get a Quote</a> -->
-                            </div>
-                        </div>
-                    </div>
-                  <!--  <div class="d-none d-xl-flex flex-shrink-0 ps-4">
-                        <a href="#" class="btn btn-light btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
-                            <i class="fa fa-phone-alt fa-2x"></i>
-                            <div class="position-absolute" style="top: 7px; right: 12px;">
-                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
-                            </div>
-                        </a>
-                        <div class="d-flex flex-column ms-3">
-                            <span>Call to Our Experts</span>
-                            <a href="tel:+ 0123 456 7890"><span class="text-dark">Free: + 0123 456 7890</span></a>
-                        </div>
-                    </div> -->
-                </nav>
-            </div>
-        </div>
-        <!-- Navbar & Hero End -->
+        .player-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
 
-        <!-- Modal Search Start -
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center bg-primary">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -- Modal Search End -->
+        .player-card h4 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
 
+        .player-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            text-align: left;
+            padding: 0 10px;
+        }
 
-        <!-- Carousel Start -->
-        
-    <div class="gms-carousel-container">
-        <div class="gms-carousel">
-            <div class="gms-carousel-inner">
-                <!-- Images with error handling -->
-                <div class="gms-carousel-item active">
-                    <img src="assets/slider10.png" alt="Classroom activity" onerror="handleGmsImageError(this)">
-                </div>
-                <div class="gms-carousel-item">
-                    <img src="assets/slider12.png" alt="Sports day" onerror="handleGmsImageError(this)">
-                </div>
-                <div class="gms-carousel-item">
-                    <img src="assets/slider11.png" alt="Library" onerror="handleGmsImageError(this)">
-                </div>
-                <div class="gms-carousel-item">
-                    <img src="assets/slider17.png" alt="Graduation" onerror="handleGmsImageError(this)">
-                </div>
-                <div class="gms-carousel-item">
-                    <img src="assets/slider18.png" alt="Science lab" onerror="handleGmsImageError(this)">
-                </div>
-            </div>
+        .player-card p strong {
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .player-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            .main-heading {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .player-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 20px;
+            }
+            .player-card img {
+                height: 220px;
+            }
+            .main-heading {
+                font-size: 2rem;
+            }
+            .centered-heading {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .player-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+            .main-heading {
+                font-size: 1.8rem;
+            }
+            .centered-heading {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid service py-5">
+        <div class="container py-5">
+            <!-- Main Heading -->
+            <h1 class="main-heading">"समर्पित शिक्षक, उत्कृष्ट शिक्षा"</h1>
             
-            <!-- Navigation buttons -->
-            <button class="gms-carousel-control gms-carousel-prev" aria-label="Previous image">&#10094;</button>
-            <button class="gms-carousel-control gms-carousel-next" aria-label="Next image">&#10095;</button>
-            
-            <!-- Indicators -->
-            <div class="gms-carousel-indicators"></div>
+            <!-- Teachers Profile Section -->
+            <section id="players">
+                <h2 class="centered-heading">शिक्षकों की प्रोफ़ाइल</h2>
+                
+                <div class="player-grid">
+                    <!-- 1. Principal -->
+                    <div class="player-card">
+                        <img src="teacher/teacher1.jpeg" alt="सुशील रजक" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h4>प्रधानाध्यापक</h4>
+                            <h3>सुशील रजक</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> MA(History)</p>
+                            <p><strong>विषय:</strong> हिंदी</p>
+                            <p><strong>अनुभव:</strong> 25 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher2.jpeg" alt="आशुतोष कुमार बैजु" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>आशुतोष कुमार बैजु</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> MA(History)</p>
+                            <p><strong>पदनाम:</strong> प्रशिक्षित स्नातक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 12 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 3. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher6.jpeg" alt="प्रभात कुमार" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>प्रभात कुमार</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(History)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 12 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 4. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher5.jpeg" alt="अशोक कुमार साहु" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>अशोक कुमार साहु</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BSc(Zoology)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 8 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 5. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher7.jpeg" alt="MD शफ़ीक़ूर रहमान" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>MD शफ़ीक़ूर रहमान</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Urdu)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 20 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 6. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher14.jpeg" alt="पवन कुमार" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>पवन कुमार</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(English)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 18 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 7. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher13.jpeg" alt="सुनैना कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>सुनैना कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Hindi)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 18 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 8. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher10.jpeg" alt="आरती कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>आरती कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(History)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 18 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 9. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher11.jpeg" alt="कमला कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>कमला कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Hindi)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 18 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 10. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher8.jpeg" alt="MD मोगीसुर रहमान" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>MD मोगीसुर रहमान</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Urdu)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 16 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 11. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher4.jpeg" alt="संतोष कुमार" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>संतोष कुमार</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> PGDCA</p>
+                            <p><strong>पदनाम:</strong> TGT(Computer)</p>
+                            <p><strong>अनुभव:</strong> 4 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 12. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher12.jpeg" alt="सरिता कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>सरिता कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Hindi)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 1 वर्ष</p>
+                        </div>
+                    </div>
+                    
+                     <!-- 13. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher12.jpeg" alt="सरिता कुमारी" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>सरिता कुमारी</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BA(Hindi)</p>
+                            <p><strong>पदनाम:</strong> प्राथमिक शिक्षक</p>
+                            <p><strong>अनुभव:</strong> 1 वर्ष</p>
+                        </div>
+                    </div>
+                    <!-- 14. Teacher -->
+                    <div class="player-card">
+                        <img src="teacher/teacher3.jpeg" alt="मनीष वर्मा" onerror="this.src='https://via.placeholder.com/300x300?text=Teacher+Image'">
+                        <div class="player-card-content">
+                            <h3>मनीष वर्मा</h3>
+                            <p><strong>शैक्षणिक योग्यता:</strong> BE(EC)</p>
+                            <p><strong>पदनाम:</strong> TGT(Math & Science)</p>
+                            <p><strong>अनुभव:</strong> 2 वर्ष</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-    <!-- Carousel End -->
-
-        <!-- Feature Start -->
-        <div class="container-fluid feature bg-light py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Features</h4>
-                    <h1 class="display-4 mb-4">Insurance Provide you a Better Future</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="far fa-handshake fa-3x"></i>
-                            </div>
-                            <h4 class="mb-4">Trusted Company</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fa fa-dollar-sign fa-3x"></i>
-                            </div>
-                            <h4 class="mb-4">Anytime Money Back</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fa fa-bullseye fa-3x"></i>
-                            </div>
-                            <h4 class="mb-4">Flexible Plans</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fa fa-headphones fa-3x"></i>
-                            </div>
-                            <h4 class="mb-4">24/7 Fast Support</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Feature End -->
-
-
-        <!-- Carousel Start -->
-<div class="carousel-container">
-       <!-- <h2>GMS Malipur</h2>  -->
-        <div class="carousel">
-            <div class="carousel-inner">
-                <!-- Images will be added here -->
-                <div class="carousel-item active">
-                    <img src="assets/slider10.png" alt="Classroom activity">
-                   <!---     <div class="caption">Students engaged in classroom learning</div>-->
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/slider12.png" alt="Sports day">
-                    <!--<div class="caption">Annual sports day competition</div>  -->
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/slider11.png" alt="Library">
-                   <!-- <div class="caption">Our well-stocked school library</div> -->
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/slider17.png" alt="Graduation">
-                   <!--- <div class="caption">Graduation ceremony 2023</div>  -->
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/slider18.png" alt="Science lab">
-                   <!---- <div class="caption">Hands-on experiments in science lab</div>  -->
-                </div>
-            </div>
-            
-            <!-- Navigation buttons -->
-            <button class="carousel-control prev" aria-label="Previous image">&#10094;</button>
-            <button class="carousel-control next" aria-label="Next image">&#10095;</button>
-            
-            <!-- Indicators -->
-            <div class="indicators"></div>
-        </div>
-    </div>
-
-<!-- Carousel End -->
-
-
- 
-
-
-
-        
-
-       
-
-
-        <!-- About Start -->
-        <div class="container-fluid bg-light about pb-5">
-            <div class="container pb-5">
-                <div class="row g-5">
-                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="about-item-content bg-white rounded p-5 h-100">
-                            <h4 class="text-primary">About Our Company</h4>
-                            <h1 class="display-4 mb-4">High Range of Exploring Protection</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt debitis sint tempora. Corporis consequatur illo blanditiis voluptates aperiam quos aliquam totam aliquid rem explicabo,
-                            </p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae praesentium recusandae eligendi modi hic
-                            </p>
-                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
-                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
-                            <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="bg-white rounded p-5 h-100">
-                            <div class="row g-4 justify-content-center">
-                                <div class="col-12">
-                                    <div class="rounded bg-light">
-                                        <img src="img/about-1.png" class="img-fluid rounded w-100" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="counter-item bg-light rounded p-3 h-100">
-                                        <div class="counter-counting">
-                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
-                                            <span class="h1 fw-bold text-primary">+</span>
-                                        </div>
-                                        <h4 class="mb-0 text-dark">Insurance Policies</h4>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="counter-item bg-light rounded p-3 h-100">
-                                        <div class="counter-counting">
-                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
-                                            <span class="h1 fw-bold text-primary">+</span>
-                                        </div>
-                                        <h4 class="mb-0 text-dark">Awards WON</h4>
-                                    </div>
-                                </div>
-                               <!--- <div class="col-sm-6">
-                                    <div class="counter-item bg-light rounded p-3 h-100">
-                                        <div class="counter-counting">
-                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
-                                            <span class="h1 fw-bold text-primary">+</span>
-                                        </div>
-                                        <h4 class="mb-0 text-dark">Skilled Agents</h4>
-                                    </div>
-                                </div> -->
-                                <!--<div class="col-sm-6">
-                                    <div class="counter-item bg-light rounded p-3 h-100">
-                                        <div class="counter-counting">
-                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
-                                            <span class="h1 fw-bold text-primary">+</span>
-                                        </div>
-                                        <h4 class="mb-0 text-dark">Team Members</h4>
-                                    </div>
-                                </div>  -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
-
-        <!-- Service Start -->
-        <div class="container-fluid service py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Services</h4>
-                    <h1 class="display-4 mb-4">We Provide Best Services</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-users fa-2x"></i>
-                                </div>
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">Life Insurance</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/blog-2.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-hospital fa-2x"></i>
-                                </div>
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">Health Insurance</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/blog-3.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-car fa-2x"></i>
-                                </div>
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">Car Insurance</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/blog-4.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-home fa-2x"></i>
-                                </div>
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">Home Insurance</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-
-        <!-- FAQs Start -->
-        <div class="container-fluid faq-section bg-light py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="h-100">
-                            <div class="mb-5">
-                                <h4 class="text-primary">Some Important FAQ's</h4>
-                                <h1 class="display-4 mb-0">Common Frequently Asked Questions</h1>
-                            </div>
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Q: What happens during Freshers' Week?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body rounded">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Q: What is the transfer application process?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Q: Why should I attend community college?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                        <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FAQs End -->
-
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">From Blog</h4>
-                    <h1 class="display-4 mb-4">News And Updates</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Business</span>
-                                </div>
-                            </div>
-                            <div class="blog-content p-4">
-                                <div class="blog-comment d-flex justify-content-between mb-3">
-                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                                </div>
-                                <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
-                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-2.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Business</span>
-                                </div>
-                            </div>
-                            <div class="blog-content p-4">
-                                <div class="blog-comment d-flex justify-content-between mb-3">
-                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                                </div>
-                                <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
-                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-3.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Business</span>
-                                </div>
-                            </div>
-                            <div class="blog-content p-4">
-                                <div class="blog-comment d-flex justify-content-between mb-3">
-                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                                </div>
-                                <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
-                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog End -->
-
-        <!-- Team Start -->
-        <div class="container-fluid team pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Team</h4>
-                    <h1 class="display-4 mb-4">Meet Our Expert Team Members</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Testimonial</h4>
-                    <h1 class="display-4 mb-4">What Our Customers Are Saying</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-1.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-2.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-3.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-
-
-       <!-- Footer Section -->
-    <footer class="school-footer">
-        <div class="footer-container">
-            <div class="footer-row">
-                <!-- About GMS Malipur with Logo -->
-                <div class="footer-col">
-                    <div class="footer-about">
-                        <img src="img/LOGO MALIPUR.jpg" alt="GMS Malipur Logo" class="footer-logo">
-                        <h4>About GMS Malipur</h4>
-                        <p>GMS Malipur is a premier educational institution committed to providing quality education and holistic development of students since its establishment.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div class="footer-col">
-                    <div class="footer-links">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Academics</a></li>
-                            <li><a href="#">Admissions</a></li>
-                            <li><a href="#">Faculty</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Contact Info -->
-                <div class="footer-col">
-                    <div class="contact-info">
-                        <h4>Contact Us</h4>
-                        <p><i class="fas fa-map-marker-alt"></i> Malipur, District, State, India - 123456</p>
-                        <p><i class="fas fa-phone-alt"></i> +91 1234567890</p>
-                        <p><i class="fas fa-envelope"></i> info@gmsmalipur.edu</p>
-                        <p><i class="fas fa-clock"></i> Monday - Saturday: 8:00 AM - 3:00 PM</p>
-                    </div>
-                </div>
-                
-                <!-- School Map -->
-                <div class="footer-col">
-                    <h4>Our Location</h4>
-                   <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.366676115628!2d77.2093143150824!3d28.62864498242206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5e2b7a5a3f%3A0x6a8f5a5b5b5b5b5b!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1629780000000!5m2!1sen!2sin" class="footer-map" allowfullscreen="" loading="lazy"></iframe> -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3595.030085372628!2d86.1504088!3d25.7034279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edf96117aa2ead%3A0x6af9976124464a66!2sMiddle%20School%20Malipur!5e0!3m2!1sen!2sin!4v1755175826902!5m2!1sen!2sin" class="footer-map" allowfullscreen="" loading="lazy" ></iframe>
-                </div>
-            </div>
-            
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>&copy; 2023 GMS Malipur. All Rights Reserved. | Designed by <a href="#">Growcell IT Architect</a></p>
-            </div>
-        </div>
-    </footer>
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
-
+</body>
 </html>

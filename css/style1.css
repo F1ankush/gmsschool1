@@ -2466,3 +2466,172 @@ body {
             font-size: 0.9rem;
             color: #6c757d;
         }
+
+
+
+
+
+
+
+
+    /* for teachers */
+
+            /* Unique CSS Styles */
+        :root {
+            --primary-color: #2c5e92;
+            --secondary-color: #4f8bc9;
+            --accent-color: #f5a623;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container-fluid.service {
+            padding: 0;
+            text-align: center; /* Center all content */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Centered Heading Styles */
+        .centered-heading {
+            display: inline-block;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 0 auto 2rem auto;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            position: relative;
+            text-align: center;
+        }
+
+        .centered-heading::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: block;
+            text-align: center;
+        }
+
+        /* Teacher Cards */
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px auto 0;
+            max-width: 1200px;
+        }
+
+        .player-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .player-card img {
+            width: 100%;
+            height: 450px,
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .player-card-content {
+            padding: 20px;
+        }
+
+        .player-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .player-card h4 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .player-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        .player-card p strong {
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .player-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            .main-heading {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .player-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 20px;
+            }
+            .player-card img {
+                height: 220px;
+            }
+            .main-heading {
+                font-size: 2rem;
+            }
+            .centered-heading {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .player-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+            .main-heading {
+                font-size: 1.8rem;
+            }
+            .centered-heading {
+                font-size: 1.6rem;
+            }
+        }
