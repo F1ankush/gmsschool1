@@ -412,11 +412,11 @@
                 if (e.target === addNoticeModal) closeModals();
             });
 
-            // Add notice button
+           /* // Add notice button
             addNoticeBtn.addEventListener('click', () => {
                 addNoticeModal.classList.add('active');
                 document.getElementById('noticeDate').valueAsDate = new Date();
-            });
+            });  */
 
             // Notice form submission
             noticeForm.addEventListener('submit', (e) => {
