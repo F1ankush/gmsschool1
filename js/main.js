@@ -310,10 +310,10 @@
                 },
                 {
                     id: 4,
-                    title: "Robotics Workshop",
-                    description: "Two-day workshop on robotics and AI for students interested in technology.",
+                    title: "विज्ञान प्रदर्शनी",
+                    description: "विद्यालय परिसर में विज्ञान प्रदर्शनी कार्यक्रम आयोजित हुआ, जिसमें छात्र-छात्राओं ने अपने प्रोजेक्ट प्रदर्शित किए। इस अवसर पर अभिभावकों एवं आगंतुकों ने उत्साहपूर्वक भाग लिया।",
                     date: "2023-11-08",
-                    image: "https://source.unsplash.com/random/600x400/?robotics,workshop"
+                    image: "assets/science.jpeg"
                 }
             ];
 
