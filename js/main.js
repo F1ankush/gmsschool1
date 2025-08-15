@@ -289,10 +289,10 @@
             const activities = [
                 {
                     id: 1,
-                    title: "Eco Club Tree Plantation",
-                    description: "Eco club students planted 100 saplings in the school premises as part of the green initiative.",
+                    title: "शारीरिक प्रशिक्षण",
+                    description: "विद्यालय में व्यायाम, योग एवं शारीरिक विकास गतिविधियाँ आयोजित हुईं, जिनमें छात्रों ने उत्साहपूर्वक भाग लिया। इन गतिविधियों से स्वास्थ्य, एकाग्रता और अनुशासन को बढ़ावा मिला।"
                     date: "2023-10-10",
-                    image: "https://source.unsplash.com/random/600x400/?tree,planting"
+                    image: "assets/slider22.png"
                 },
                 {
                     id: 2,
